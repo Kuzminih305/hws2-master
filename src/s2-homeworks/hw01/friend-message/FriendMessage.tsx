@@ -1,12 +1,10 @@
 import React from 'react'
 import s from './FriendMessage.module.css'
-import {friendMessage0} from "../HW1";
+import {friendMessage0, MessageType} from "../HW1";
 
 // создать тип вместо any и отобразить приходящие данные
 export type Message_PropsType = {
-    message: {
-        id: number
-    }
+    message: MessageType
 
 }
 
@@ -20,7 +18,7 @@ const FriendMessage = (props: Message_PropsType) => {
             <div className={s.friendImageAndText}>
                 <img
                     id={'hw1-friend-avatar-' + props.message.id}
-                    src={friendMessage0.user.avatar}
+                    src={props.message.user.avatar}
 
                     //
                 />
@@ -29,7 +27,7 @@ const FriendMessage = (props: Message_PropsType) => {
                         id={'hw1-friend-name-' + props.message.id}
                         className={s.friendName}
                     >
-                        {friendMessage0.user.name}
+                        {props.message.user.name}
 
                         {/**/}
                     </div>
@@ -37,7 +35,7 @@ const FriendMessage = (props: Message_PropsType) => {
                         id={'hw1-friend-text-' + props.message.id}
                         className={s.friendMessageText}
                     >
-                        {friendMessage0.message.text}
+                        {props.message.message.text}
 
                         {/**/}
                     </pre>
@@ -47,7 +45,7 @@ const FriendMessage = (props: Message_PropsType) => {
                 id={'hw1-friend-time-' + props.message.id}
                 className={s.friendTime}
             >
-                {friendMessage0.message.time}
+                {props.message.message.time}
 
                 {/**/}
             </div>
