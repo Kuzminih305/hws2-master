@@ -3,14 +3,21 @@
 }
 
 .imageAndText {
-
+    display: grid;
+    grid-template-columns: repeat(19,1fr);
+    align-items: center;
+    justify-items: center;
 }
 
 .imageAndText img {
+max-width: 100%;
 
 }
 
 .text {
+
+
+
 
 }
 
@@ -19,13 +26,19 @@
 }
 
 .name {
+    font-size: 20px;
+
 
 }
 
 .messageText {
+    font-size: 15px;
+    background-color: beige;
 
 }
 
 .time {
+    padding-left: 30px;
+
 
 }

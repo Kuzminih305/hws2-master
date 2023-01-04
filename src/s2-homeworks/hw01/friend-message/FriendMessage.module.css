@@ -3,14 +3,24 @@
 }
 
 .friendImageAndText {
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    justify-items: center;
+    align-items: center;
+    grid-gap: 5px;
+
 
 }
 
 .friendImageAndText img {
+    max-width: 110%;
+    grid-column: 20;
+    grid-row: 1;
 
 }
 
 .friendText {
+    grid-column: 19;
 
 }
 
@@ -19,13 +29,16 @@
 }
 
 .friendName {
+    font-size: 20px;
 
 }
 
 .friendMessageText {
+    font-size: 15px;
+    background-color: beige;
 
 }
 
 .friendTime {
-
+padding-left: 2060px;
 }
