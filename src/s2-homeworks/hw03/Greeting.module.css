@@ -32,7 +32,7 @@
 }
 
 .errorInput {
-    border: 1px solid #CC0000;
+    border: 1px solid red;
     border-radius: 5px;
     width: 372px;
     height: 36px;
