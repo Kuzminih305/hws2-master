@@ -9,20 +9,21 @@ export const themeReducer = (state:StateType = initState, action: ChangeThemeIdT
     switch (action.type) {
         // дописать
         case 'SET_THEME_ID' :
-            return {themeId: action.payload.id}
+            return {...state ,themeId: action.id}
         default:
             return state
     }
 }
 
-type ChangeThemeIdType = ReturnType<typeof changeThemeId>
+type ChangeThemeIdType = {
+    type: 'SET_THEME_ID',
+    id: number
+}
 
-export const changeThemeId = (id: number) => {
+export const changeThemeId = (id: number): ChangeThemeIdType => {
     return {
         type: 'SET_THEME_ID',
-        payload: {
-            id
-        }
-    }as const
+        id
+    }
 }
 
