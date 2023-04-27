@@ -56,6 +56,9 @@ const HW15 = () => {
                 // сохранить пришедшие данные
 
                 //
+                res && setTechs(res.data.techs)
+                res && setTotalCount(res.data.totalCount)
+                setLoading(false)
             })
     }
 
@@ -69,6 +72,14 @@ const HW15 = () => {
         // setSearchParams(
 
         //
+        setPage(newPage)
+        setCount(newCount)
+        sendQuery({page:newPage, count:newCount, sort})
+        setSearchParams({
+            page: newPage.toString(),
+            count: newCount.toString(),
+            sort
+        })
     }
 
     const onChangeSort = (newSort: string) => {
@@ -81,6 +92,10 @@ const HW15 = () => {
         // setSearchParams(
 
         //
+        setSort(newSort)
+        setPage(1)
+        sendQuery({sort:newSort, page, count})
+        setSearchParams({page: "1", count:count.toString(), sort: newSort})
     }
 
     useEffect(() => {
